@@ -1,4 +1,85 @@
 .Issue {
   border-bottom: 1px solid #ccc;
   padding: 10px 15px;
+  display: flex;
+}
+
+.Issue__icon {
+  flex-shrink: 0;
+  padding-right: 10px;
+}
+.Issue__icon svg {
+  fill: green;
+}
+
+.Issue__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+}
+
+.Issue__labels {
+  display: inline;
+  font-size: 14px;
+  line-height: 21px;
+  overflow-wrap: break-word;
+}
+
+.Issue__title:hover {
+  color: blue;
+}
+
+.Issue__details {
+  flex-grow: 1;
+}
+
+.Issue__meta {
+  margin-top: 10px;
+  flex-shrink: 0;
+  color: #555;
+}
+
+.Issue__user {
+  color: #555;
+  text-decoration: none;
+}
+
+.Issue__user:hover {
+  color: blue;
+}
+
+.Issue__extras {
+  display: flex;
+  width: 25%;
+}
+
+.Issue__extra-col {
+  width: 33%;
+  margin-left: 10px;
+  text-align: right;
+}
+
+.Issues__extras-link {
+  text-decoration: none;
+  color: #555;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.Issues__extras-link svg {
+  fill: #555;
+  vertical-align: middle;
+}
+
+.Issues__extras-link:hover {
+  color: blue;
+}
+
+.Issues__extras-link:hover svg {
+  fill: blue;
+}
+
+.Issue__assignee-img {
+  width: 20px;
 }
