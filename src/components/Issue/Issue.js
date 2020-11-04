@@ -7,6 +7,7 @@ import './Issue.css'
 export default function Issue(props) {
   const { issueData: issue } = props
   const time = timeSince(new Date(issue.created_at));
+
   return (
     <div className="Issue">
       <div className="Issue__icon">
@@ -17,7 +18,7 @@ export default function Issue(props) {
           {issue.title}
         </a>
         <span className="Issue__labels">
-          { issue.labels.map(label => <Label label={label}/>)}
+          { issue.labels.map(label => <Label key={label.id} label={label}/>)}
         </span>
         <div className="Issue__meta">
           #{issue.number} opened {time} by <a className="Issue__user" href={issue.user.html_url}>{issue.user.login}</a>

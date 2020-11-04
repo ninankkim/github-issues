@@ -1,37 +1,27 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import Issue from '../Issue/Issue';
 import './IssueList.css';
 
-export default class IssueList extends Component {
-  constructor() {
-    super();
+export default function IssueList() {
+  const [issues, setIssues] = useState([]);
 
-    this.state = {
-      issues: []
-    }
-  }
-
-  loadIssues = () => {
+  const loadIssues = () => {
     fetch('https://api.github.com/repos/facebook/create-react-app/issues')
       .then(res => res.json())
       .then(data => {
-        this.setState({
-          issues: data
-        });
+        setIssues(data)
       })
   }
 
-  componentDidMount() {
-    this.loadIssues();
-  }
+  useEffect(() => {
+    loadIssues();
+  }, [])
 
-  render() {
-    return (
-      <div className="IssueList">
-        { this.state.issues.map((issue) => {
-          return <Issue key={issue.id} issueData={issue} />
-        }) }
-      </div>
-    )
-  }
+  return (
+    <div className="IssueList">
+      { issues.map((issue) => {
+        return <Issue key={issue.id} issueData={issue} />
+      }) }
+    </div>
+  )
 }
