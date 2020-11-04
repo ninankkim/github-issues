@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Label.css';
 
 function getForegroundColor(bgColor) {
@@ -16,8 +17,8 @@ export default function Label(props) {
     backgroundColor: `#${label.color}`
   }
   return (
-    <a className="Label" href={label.url} style={style}>
+    <Link className="Label" to={`/labels/${label.name}`} style={style}>
       { label.name }
-    </a>
+    </Link>
   )
 }
