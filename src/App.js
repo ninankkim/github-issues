@@ -4,6 +4,7 @@ import './App.css';
 import IssueDetail from './components/IssueDetail/IssueDetail';
 import IssueList from './components/IssueList/IssueList';
 import IssuesByLabel from './components/IssuesByLabel/IssuesByLabel';
+import Users from './components/Users/Users';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -20,6 +21,7 @@ function App() {
       <ul>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/issues">Issues</Link></li>
+        <li><Link to="/users">User Search</Link></li>
       </ul>
       <div>
         <Switch>
@@ -29,6 +31,7 @@ function App() {
           <Route path="/issues/:number" component={IssueDetail} />
           <Route path="/issues" component={IssueList} />
           <Route path="/labels/:name" component={IssuesByLabel} />
+          <Route path="/users" component={Users}/>
           <Route>
             <Redirect to="/" />
           </Route>
