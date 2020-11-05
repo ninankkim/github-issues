@@ -6,16 +6,12 @@ export default function IssuesByLabel() {
   const { name } = useParams();
   const [issues, setIssues] = useState([]);
 
-  const loadIssues = () => {
+  useEffect(() => {
     fetch(`https://api.github.com/repos/facebook/create-react-app/issues?labels=${name}`)
       .then(res => res.json())
       .then(data => {
         setIssues(data)
       })
-  }
-
-  useEffect(() => {
-    loadIssues();
   }, [])
 
   return (

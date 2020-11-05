@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import timeSince from '../../lib/timeSince'
 import Icon from '../Icon/Icon'
 import Label from '../Label/Label'
@@ -14,9 +15,9 @@ export default function Issue(props) {
         <Icon type={issue.state} />
       </div>
       <div className="Issue__details">
-        <a className="Issue__title" href={issue.html_url}>
+        <Link className="Issue__title" to={`/issues/${issue.number}`}>
           {issue.title}
-        </a>
+        </Link>
         <span className="Issue__labels">
           { issue.labels.map(label => <Label key={label.id} label={label}/>)}
         </span>

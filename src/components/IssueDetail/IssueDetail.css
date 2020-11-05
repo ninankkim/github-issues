@@ -1,0 +1,19 @@
+.IssueDetail {
+  max-width: 1200px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.markdown img {
+  max-width: 100%;
+}
+
+.markdown a {
+  color: red;
+}
+
+.markdown code {
+  background-color: #eee;
+  padding: 4px;
+  border-radius: 5px;
+}
