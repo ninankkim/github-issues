@@ -31,7 +31,8 @@ function App() {
           <Route path="/issues/:number" component={IssueDetail} />
           <Route path="/issues" component={IssueList} />
           <Route path="/labels/:name" component={IssuesByLabel} />
-          <Route path="/users" component={Users}/>
+          <Route exact path="/users" component={Users}/>
+          {/* <Route path="/user/:username" component={UserDetail} /> */}
           <Route>
             <Redirect to="/" />
           </Route>

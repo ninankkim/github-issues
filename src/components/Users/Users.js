@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import UserCard from '../UserCard/UserCard';
 
 function Users() {
     const [ userName, setUserName ] = useState('');
@@ -14,8 +15,9 @@ function Users() {
             })
         .then(res => res.json())
         .then(data => {
-            //concat take the array, adds in data, and then returns the new array
-            setUsers(users.concat(data));
+            const newUsers = [...users]
+            newUsers.unshift(data);
+            setUsers(newUsers);
             setUserName('');
         })
         .catch(error => {
@@ -37,7 +39,7 @@ function Users() {
             <h2>Results</h2>
             <div>
                 { users.map((user) => {
-                    return <div>{ user.login } <img src={user.avatar_url}></img></div>
+                    return <UserCard user={user} />
                 }) }
             </div>
         </div>

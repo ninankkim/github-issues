@@ -1,0 +1,16 @@
+.UserCard {
+    display:flex;
+    background:#eee;
+    box-shadow: 0 10px 10px rgba(0,0,0,.2);
+    margin: 30px;
+}
+
+.profile-image img{
+    max-width:100px;
+    border-radius: 50%;
+    margin:20px;
+}
+
+.profile-details {
+    padding-left:20px;
+}
